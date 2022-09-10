@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Task 2.7 Countries</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1 class="header__title">Where in the world?</h1>
+        <button class="header__mode"><i class="fa-solid fa-moon"></i> <span>Dark Mode</span></button>
+      </header>
+      <div class="container">
+        <section class="utilities">
+          <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" class="search" placeholder="Search for a country..." />
+          </div>
+          <div class="custom-select">
+            <select class="custom-select__dropdown" name="Choose Country">
+              <option class="custom-select__option" value="all">All</option>
+              <option class="custom-select__option" value="africa">Africa</option>
+              <option class="custom-select__option" value="americas">Americas</option>
+              <option class="custom-select__option" value="asia">Asia</option>
+              <option class="custom-select__option" value="europe">Europe</option>
+              <option class="custom-select__option" value="oceania">Oceania</option>
+            </select>
+            <span class="custom-select__arrow">
+              <i class="fa-solid fa-chevron-down"></i>
+            </span>
+          </div>
+        </section>
+        <section class="modal hidden"></section>
+        <section class="countries-container">
+          <h2>Loading...</h2>
+        </section>
+      </div>
+    </div>
+  </body>
+  <script src="./js/countries.js"></script>
+</html>

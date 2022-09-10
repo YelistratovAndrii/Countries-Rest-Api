@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap');
+@import './styles/base/reset';
+@import './styles/base/utilities';
+@import './styles/base/variables';
+
+:root {
+  --el-bg: #f8f9fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+  font-weight: $fontWeight400;
+}
+
+.hidden {
+  display: none;
+}
+
+.scroll-lock {
+  overflow-y: hidden;
+}
+
+.wrapper {
+  color: $black;
+  background-color: $white;
+  border: 1px solid $white;
+  min-height: 100vh;
+  padding: 50px 0;
+
+  &._dark {
+    color: $white;
+    background-color: $colorDarker;
+    border: 1px solid $colorDarker;
+    --el-bg: #2d3748;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+  background-color: var(--el-bg);
+  padding: 20px 60px;
+  margin-bottom: 50px;
+
+  @include element(mode) {
+    cursor: pointer;
+    color: inherit;
+  }
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+.utilities {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.search-container {
+  background-color: var(--el-bg);
+  padding: 10px 40px;
+  font-size: 0.8rem;
+  width: 350px;
+  position: relative;
+  border-radius: 7px;
+  box-shadow: 0 0 5px $colorGrey;
+
+  & > i {
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  & > input {
+    width: 100%;
+    color: inherit;
+
+    &::placeholder {
+      color: inherit;
+    }
+  }
+}
+
+.custom-select {
+  position: relative;
+  width: 200px;
+  background-color: var(--el-bg);
+  box-shadow: 0 0 5px $colorGrey;
+  border-radius: 7px;
+  font-size: 0.8rem;
+
+  @include element(dropdown) {
+    width: 100%;
+    height: 100%;
+    padding: 12px 40px 10px 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  @include element(option) {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+    background-color: var(--el-bg);
+    color: inherit;
+
+    &:hover {
+      opacity: 0.6;
+      font-weight: 600;
+    }
+  }
+
+  @include element(arrow) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 2rem;
+    display: block;
+    background-color: transparent;
+    pointer-events: none;
+
+    & > i {
+      transform: translate(0, 90%);
+    }
+  }
+}
+
+.countries-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 359px));
+  grid-gap: 60px;
+
+  & > h2 {
+    margin: 200px auto 0;
+  }
+}
+
+.country {
+  background-color: var(--el-bg);
+  border-radius: 8px;
+  box-shadow: 0 0 5px $colorGrey;
+  overflow: hidden;
+  cursor: pointer;
+
+  @include element(img-container) {
+    & > img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @include element(info-container) {
+    padding: 20px 30px;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--el-bg);
+  padding: 50px 50px 100px;
+
+  @include element(close-btn) {
+    padding: 10px 30px;
+    background-color: var(--el-bg);
+    color: inherit;
+    border-radius: 5px;
+    box-shadow: 0 0 5px $colorGrey;
+    cursor: pointer;
+    margin-bottom: 50px;
+  }
+
+  @include element(flex-container) {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+  }
+
+  @include element(img-container) {
+    flex-basis: 50%;
+
+    & > img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @include element(info-container) {
+    flex-basis: 50%;
+  }
+
+  @include element(info-column) {
+  }
+}
